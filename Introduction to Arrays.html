@@ -52,25 +52,32 @@
 
     // declaring and initializing a large array
 
-    let students = [
-        "Justin",
-        "Javier",
-        "Laura",
-        "Isaac",
-        "Trevor",
-        "Dane",
-        "Ryan",
-        "Vivian"
-    ];
+    // let students = [
+    //     "Justin",
+    //     "Javier",
+    //     "Laura",
+    //     "Isaac",
+    //     "Trevor",
+    //     "Dane",
+    //     "Ryan",
+    //     "Vivian"
+    // ];
 
+    // let lastStudent = students.length - 1;
+    // console.log(students[1]);
+    // console.log(students[lastStudent]);
+    // console.log(students.length);
+    // console.log(students[8]); // will be undefined because vivian is the last index.
+    // students[0] = 'Overlord';
+    // console.log(students)
 
     // 3
 
-    console.log(students[students.length - 1]);
-
-
-
-    console.log(students[100]);
+    // console.log(students[students.length - 1]);
+    //
+    //
+    //
+    // console.log(students[100]);
 
 
 
@@ -85,10 +92,8 @@
     // let pies = [];
     // pies[0] = "apple";
     // pies[1] = "cherry";
-
-
-
-
+    // pies[10]= 'vanilla';
+    //
     // console.log(pies);
 
     // declaring and initializing a high index number
@@ -118,11 +123,22 @@
 
     // ============================= !! MINI-EXERCISE 1 !!
 
-    /*
-        1. Create an array of three of your classmates.
-        2. Practice console logging each classmate separately.
-        3. Reassign the second element to be the string "Justin".
-     */
+    // 1. Create an array of three of your classmates.
+    //     let students = [
+    //     "Luke",
+    //     "Will",
+    //     "Robert",
+    //     ];
+    //
+    //     //2. Practice console logging each classmate separately.
+    //     console.log(students[0]);
+    //     console.log(students[1]);
+    //     console.log(students[2]);
+    //
+    //     //3. Reassign the second element to be the string "Justin".
+    //     students[1] = "Justin";
+    //     console.log(students);
+
 
     // ============================= For Loop
 
@@ -142,7 +158,21 @@
 
     // example
 
+    //my practice
+
     // let pies = ["apple", "cherry", "key lime", "huckleberry"];
+    //
+    // // for (let i = 0; i < pies.length; i += 1) {  //< will always end on the .length of an array
+    // //     console.log(i);
+    // //     console.log(pies[i]);
+    // // }
+    // //
+    // for (let i = pies.length - 1; i >= 0; i -= 1) { //pies.length - 1, the -1 removes the "undefined" when in reverse order.
+    //     console.log(pies[i]);
+    // }
+
+
+
 
     // console.log(pies);
     //
@@ -164,7 +194,7 @@
     // ============================= ForEach Loop
 
     /* SYNTAX
-
+      //the forEach is a function that takes in an argument that does not take in a boolean or string, they take in functions.
         someArray.forEach(function(element, index, array){
             console.log(element);
             console.log(index);
@@ -189,6 +219,35 @@
         }
 
      */
+//notes***************
+    // const numbers = ['ken', 'Bob', 3, 4, 5, 6];
+    //ken = element
+    //ken = '0' index
+    //[all] = array
+
+    // function logEvenOddMessage(number) {
+    //     let isEven = (number % 2 === 0) ? 'even' : 'odd';
+    //     console.log(isEven);
+    // }
+    //
+    // numbers.forEach(logEvenOddMessage);
+    //
+    // numbers.forEach(function(number) {
+    //     let isEven = (number % 2 === 0) ? 'even' : 'odd';
+    //     console.log(isEven);
+    // });
+
+    // numbers.forEach(function(element, index, array){
+    //    console.log(element, index, array);
+    // })
+
+    //example for a forEach************
+    // const numbers = [3, 2, 4];
+    // let total = 0;
+    // numbers.forEach(function(number){
+    //     total += number;
+    // });
+    // console.log(total);
 
 
     // standard syntax
@@ -257,10 +316,23 @@
 
     // ============================= !! MINI-EXERCISE 2 !!
 
-    /*
-        1. Loop through your classmates array with a for loop.
-        2. Loop through your classmates array with a forEach loop.
-     */
+    // 1. Loop through your classmates array with a for loop to log each classmate.
+   const classmates = ["Ken", "Bob", "Jeff", "Sam", "Chris"];
+
+    // for (let i = 0; i < classmates.length; i += 1) {
+    //     console.log(classmates[i]);
+    // }
+
+    // 2. Loop through your classmates array with a forEach loop.
+    classmates.forEach(function(element, index, array){
+       console.log(element);
+        console.log(index);
+        console.log(array);
+    });
+
+    // numbers.forEach(function(element, index, array){
+    //    console.log(element, index, array);
+    // })
 
     // ============================= ARRAYS AND FUNCTIONS EXAMPLES
 
