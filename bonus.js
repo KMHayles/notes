@@ -218,15 +218,45 @@
 // console.log(returnLastTwoChars('hello'));
 // console.log(returnLastTwoChars('hi'));
 
-function returnLastTwoChars(input1, input2) {
-        if (input2 === 0) {
-           return '';
-        }
-        return input1.slice(-input2);
+// function returnLastTwoChars(input1, input2) {
+//         if (input2 === 0) {
+//            return '';
+//         }
+//         return input1.slice(-input2);
+// }
+// console.log(returnLastTwoChars('cat', 0));
+// console.log(returnLastTwoChars('cat', 1));
+// console.log(returnLastTwoChars('cat', 2));
+
+//01/03/23
+// Write a function, iBeforeE that takes in a string and returns the string with any ‘ei’ characters replaced with ‘ie’.
+// iBeforeE(‘ei’) // returns ‘ie’
+// iBeforeE(‘height’) // returns ‘hieght’
+// iBeforeE(‘heist’) // returns ‘hiest’
+// iBeforeE(‘their’) // returns ‘thier’
+// iBeforeE(‘theirtheir’) // returns ‘thierthier’
+
+function iBeforeE (input){
+    let result = input.replaceAll("ei", "ie");
+    return result;
 }
-console.log(returnLastTwoChars('cat', 0));
-console.log(returnLastTwoChars('cat', 1));
-console.log(returnLastTwoChars('cat', 2));
 
+console.log(iBeforeE('ei')) // returns ‘ie’
+console.log(iBeforeE('height')) // returns ‘hieght’
+console.log(iBeforeE('heist')) // returns ‘hiest’
+console.log(iBeforeE('their')) // returns ‘thier’
+console.log(iBeforeE('theirtheir')) // returns ‘thierthier’
 
+// function iBeforeE(input) {
+//     let output = '';
+//     for (let i = 0; i < input.length; i += 1){
+//         if (input )
+//     }
+// }
+//
+// const iBeforeE = string => string.split('ei').join('ie');
 
+// function iBeforeE(string){
+//     let newString = string.replace(/ei/g, "ie");
+//     return newString;
+// }
