@@ -152,44 +152,44 @@
 //
 // Create a function, returnLongestPetName, that takes in a array of pet objects and returns a string of the longest name for a pet.
 
-    const pets = [
-    {
-        name: 'Sparky',
-        type: 'Fish',
-        age: 4
-    },
-    {
-        name: 'Mr. Pig',
-        type: 'Cat',
-        age: 4
-    },
-    {
-        name: 'Bubba',
-        type: 'Dog',
-        age: 5
-    },
-    {
-        name: 'Beans',
-        type: 'Dog',
-        age: 3
-    },
-    {
-        name: 'Mr. Salmon',
-        type: 'Fish',
-        age: 1
-    }
-];
+//     const pets = [
+//     {
+//         name: 'Sparky',
+//         type: 'Fish',
+//         age: 4
+//     },
+//     {
+//         name: 'Mr. Pig',
+//         type: 'Cat',
+//         age: 4
+//     },
+//     {
+//         name: 'Bubba',
+//         type: 'Dog',
+//         age: 5
+//     },
+//     {
+//         name: 'Beans',
+//         type: 'Dog',
+//         age: 3
+//     },
+//     {
+//         name: 'Mr. Salmon',
+//         type: 'Fish',
+//         age: 1
+//     }
+// ];
 
 // for loop
-const returnLongestPetName = (animals) => {
-    let longestPetName = "";
-    for (let i = 0; i < animals.length; i++) {
-        if (animals[i].name.length > longestPetName.length) {
-            longestPetName = animals[i].name;
-        }
-    }
-    return longestPetName;
-};
+// const returnLongestPetName = (animals) => {
+//     let longestPetName = "";
+//     for (let i = 0; i < animals.length; i++) {
+//         if (animals[i].name.length > longestPetName.length) {
+//             longestPetName = animals[i].name;
+//         }
+//     }
+//     return longestPetName;
+// };
 
 // // forEach
 // const returnLongestPetName = (animals) => {
@@ -202,11 +202,31 @@ const returnLongestPetName = (animals) => {
 //     return longestPetName;
 // };
 //
-console.log(returnLongestPetName(pets));
+//console.log(returnLongestPetName(pets));
 
 
+// Write a function, returnLastTwoChars that returns the last two characters of an input string. Assume a string input of at least two characters.
+// returnLastTwoChars(‘cat’) // returns ‘at’
+// returnLastTwoChars(‘hello’) // returns ‘lo’
+// returnLastTwoChars(‘hi’) // returns ‘hi’
 
+//01/2/23
+// function returnLastTwoChars(input) {
+//         return input.slice(-2);
+// }
+// console.log(returnLastTwoChars('cat'));
+// console.log(returnLastTwoChars('hello'));
+// console.log(returnLastTwoChars('hi'));
 
+function returnLastTwoChars(input1, input2) {
+        if (input2 === 0) {
+           return '';
+        }
+        return input1.slice(-input2);
+}
+console.log(returnLastTwoChars('cat', 0));
+console.log(returnLastTwoChars('cat', 1));
+console.log(returnLastTwoChars('cat', 2));
 
 
 
