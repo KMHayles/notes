@@ -236,16 +236,16 @@
 // iBeforeE(‘their’) // returns ‘thier’
 // iBeforeE(‘theirtheir’) // returns ‘thierthier’
 
-function iBeforeE (input){
-    let result = input.replaceAll("ei", "ie");
-    return result;
-}
-
-console.log(iBeforeE('ei')) // returns ‘ie’
-console.log(iBeforeE('height')) // returns ‘hieght’
-console.log(iBeforeE('heist')) // returns ‘hiest’
-console.log(iBeforeE('their')) // returns ‘thier’
-console.log(iBeforeE('theirtheir')) // returns ‘thierthier’
+// function iBeforeE (input){
+//     let result = input.replaceAll("ei", "ie");
+//     return result;
+// }
+//
+// console.log(iBeforeE('ei')) // returns ‘ie’
+// console.log(iBeforeE('height')) // returns ‘hieght’
+// console.log(iBeforeE('heist')) // returns ‘hiest’
+// console.log(iBeforeE('their')) // returns ‘thier’
+// console.log(iBeforeE('theirtheir')) // returns ‘thierthier’
 
 // function iBeforeE(input) {
 //     let output = '';
@@ -259,4 +259,28 @@ console.log(iBeforeE('theirtheir')) // returns ‘thierthier’
 // function iBeforeE(string){
 //     let newString = string.replace(/ei/g, "ie");
 //     return newString;
+// }
+
+
+//01/04/23
+// Create a function, filterList, that takes a list of non-negative integers and strings and returns a new list with the strings filtered out.
+
+// const arr = [1,2,'a','b'];
+//
+// const filterList = arr.filter(
+//     element => typeof element === 'number'
+// );
+// console.log(filterList);
+
+
+//filterList([1,2,‘a’,‘b’]) // returns [1,2]
+// filterList([1,‘a’,‘b’,0,15]); // returns [1,0,15]
+// filterList([1,2,‘aasf’,‘1’,‘123’,123]); // returns [1,2,123]
+
+
+// function filterList(input){
+//     let array = []
+//         for(let i=0; i < input.length; i++){
+//             if(typeof input[i])
+//         }
 // }
