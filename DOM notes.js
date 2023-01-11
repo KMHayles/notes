@@ -31,6 +31,4 @@
     header.remove();
 
 
-
-
 })();
