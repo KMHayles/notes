@@ -380,14 +380,90 @@
 
 // Create a function, shiftElementsOver, that takes in an array and returns the array with all elements moved one index further into the array. The final element should be moved to the front. Assume the input array will have three or more elements.
 
-    function shiftElementsOver(arr, places) {
-        let shiftedArray = [];
-        for (var i = 0; i < places; i++) {
-            shiftedArray.unshift(arr.pop());
-        }
-    }
-    console.log(shiftElementsOver());
+//     function shiftElementsOver(arr, places) {
+//         let shiftedArray = [];
+//         for (var i = 0; i < places; i++) {
+//             shiftedArray.unshift(arr.pop());
+//         }
+//     }
+//     console.log(shiftElementsOver());
+//
+// shiftElementsOver([1, 2, 3, 4, 5]) // returns [5, 1, 2, 3, 4]
+// shiftElementsOver(['bob', 'sally', 'mary']) // returns ['mary', 'bob', 'sally']
+// shiftElementsOver([null, 123, 'hello world', true]) // returns [true, null, 123, 'hello world']
 
-shiftElementsOver([1, 2, 3, 4, 5]) // returns [5, 1, 2, 3, 4]
-shiftElementsOver(['bob', 'sally', 'mary']) // returns ['mary', 'bob', 'sally']
-shiftElementsOver([null, 123, 'hello world', true]) // returns [true, null, 123, 'hello world']
+01/18/23
+// Write a function that takes a neighborhood object and determines if it is desirable. A neighborhood is desirable if the median home price is less than 300000, crime rates are low, and the total rating of schools is at least 24.
+
+// example data...
+
+const neighborhood1 = {
+    neighborhood: "Lovely Estates",
+    medianHomePrice: 280000,
+    pool: true,
+    tennis: false,
+    crimeRate: "low",
+    schools: [
+        {name: "Elementary School", rating: 8},
+        {name: "Middle School", rating: 6},
+        {name: "High School", rating: 8}
+    ]
+};
+
+const neighborhood2 = {
+    neighborhood: "Luminous Estates",
+    medianHomePrice: 270000,
+    pool: true,
+    tennis: false,
+    crimeRate: "high",
+    schools: [
+        {name: "Elementary School", rating: 8},
+        {name: "Middle School", rating: 8},
+        {name: "High School", rating: 8}
+    ]
+}
+
+const neighborhood3 = {
+    neighborhood: "Oak Mountain",
+    medianHomePrice: 290000,
+    pool: false,
+    tennis: false,
+    crimeRate: "low",
+    schools: [
+        {name: "Elementary School", rating: 8},
+        {name: "Middle School", rating: 8},
+        {name: "High School", rating: 8}
+    ]
+}
+
+const neighborhood4 = {
+    neighborhood: "Ginormous Acres",
+    medianHomePrice: 350000,
+    pool: true,
+    tennis: true,
+    crimeRate: "low",
+    schools: [
+        {name: "Elementary School", rating: 9},
+        {name: "Middle School", rating: 9},
+        {name: "High School", rating: 9}
+    ]
+}
+
+let homePrice = medianHomePrice.value
+let crime = crimeRate.value
+let totalRating = schools.values()
+let schoolRating = totalRating.value
+
+function goodNeighborhood(){
+
+    if(homePrice > 30000 && crime === "low" && schoolRating > 24){
+        return true;
+        console.log(goodNeighborhood());
+    }
+
+}
+
+goodNeighborhood(neighborhood1) // returns false due to school rating
+goodNeighborhood(neighborhood2) // returns false due to crime rate
+goodNeighborhood(neighborhood3) // returns true
+goodNeighborhood(neighborhood4) // returns false due to median home price
