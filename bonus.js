@@ -392,74 +392,117 @@
 // shiftElementsOver(['bob', 'sally', 'mary']) // returns ['mary', 'bob', 'sally']
 // shiftElementsOver([null, 123, 'hello world', true]) // returns [true, null, 123, 'hello world']
 
-01/18/23
+//01/18/23
 // Write a function that takes a neighborhood object and determines if it is desirable. A neighborhood is desirable if the median home price is less than 300000, crime rates are low, and the total rating of schools is at least 24.
 
 // example data...
 
-const neighborhood1 = {
-    neighborhood: "Lovely Estates",
-    medianHomePrice: 280000,
-    pool: true,
-    tennis: false,
-    crimeRate: "low",
-    schools: [
-        {name: "Elementary School", rating: 8},
-        {name: "Middle School", rating: 6},
-        {name: "High School", rating: 8}
-    ]
-};
+// const neighborhood1 = {
+//     neighborhood: "Lovely Estates",
+//     medianHomePrice: 280000,
+//     pool: true,
+//     tennis: false,
+//     crimeRate: "low",
+//     schools: [
+//         {name: "Elementary School", rating: 8},
+//         {name: "Middle School", rating: 6},
+//         {name: "High School", rating: 8}
+//     ]
+// };
+//
+// const neighborhood2 = {
+//     neighborhood: "Luminous Estates",
+//     medianHomePrice: 270000,
+//     pool: true,
+//     tennis: false,
+//     crimeRate: "high",
+//     schools: [
+//         {name: "Elementary School", rating: 8},
+//         {name: "Middle School", rating: 8},
+//         {name: "High School", rating: 8}
+//     ]
+// }
 
-const neighborhood2 = {
-    neighborhood: "Luminous Estates",
-    medianHomePrice: 270000,
-    pool: true,
-    tennis: false,
-    crimeRate: "high",
-    schools: [
-        {name: "Elementary School", rating: 8},
-        {name: "Middle School", rating: 8},
-        {name: "High School", rating: 8}
-    ]
+// const neighborhood3 = {
+//     neighborhood: "Oak Mountain",
+//     medianHomePrice: 290000,
+//     pool: false,
+//     tennis: false,
+//     crimeRate: "low",
+//     schools: [
+//         {name: "Elementary School", rating: 8},
+//         {name: "Middle School", rating: 8},
+//         {name: "High School", rating: 8}
+//     ]
+// }
+//
+// const neighborhood4 = {
+//     neighborhood: "Ginormous Acres",
+//     medianHomePrice: 350000,
+//     pool: true,
+//     tennis: true,
+//     crimeRate: "low",
+//     schools: [
+//         {name: "Elementary School", rating: 9},
+//         {name: "Middle School", rating: 9},
+//         {name: "High School", rating: 9}
+//     ]
+// }
+
+
+// function goodNeighborhood(neighborhood){
+//     let totalSchoolRating = 0;
+//
+//     for (let i = 0; i < neighborhood.schools.length; i += 1) {
+//         totalSchoolRating += neighborhood.schools[i].rating;
+//     }
+//     return neighborhood.medianHomePrice < 300000 && neighborhood.crimeRate === 'low' && totalSchoolRating >= 24;
+// }
+//
+// console.log(goodNeighborhood(neighborhood1)) // returns false due to school rating
+// console.log(goodNeighborhood(neighborhood2)) // returns false due to crime rate
+// console.log(goodNeighborhood(neighborhood3)) // returns true
+// console.log(goodNeighborhood(neighborhood4)) // returns false due to median home price
+
+
+01/19/23
+// Create a function, encodeStr, that takes in a string and returns the string of characters with the following substitutions:
+//
+// function encodeStr (input) {
+//     let inputNew = input.toLowerCase()
+//     if (typeof input === 'string') {
+//         inputNew.replace('a', '@');
+//     }
+//     if (typeof input === 'string') {
+//         inputNew.replace('i', 'i');
+//     }
+//     if (typeof input === 'string') {
+//         inputNew.replace('s', '$');
+//     }
+// }
+
+function encodeStr (input) {
+    return input
+        .replace(/a/g, "@")
+        .replace(/S/g, "$")
+        .replace(/i/g, "1");
 }
 
-const neighborhood3 = {
-    neighborhood: "Oak Mountain",
-    medianHomePrice: 290000,
-    pool: false,
-    tennis: false,
-    crimeRate: "low",
-    schools: [
-        {name: "Elementary School", rating: 8},
-        {name: "Middle School", rating: 8},
-        {name: "High School", rating: 8}
-    ]
-}
+//replaceALL()
 
-const neighborhood4 = {
-    neighborhood: "Ginormous Acres",
-    medianHomePrice: 350000,
-    pool: true,
-    tennis: true,
-    crimeRate: "low",
-    schools: [
-        {name: "Elementary School", rating: 9},
-        {name: "Middle School", rating: 9},
-        {name: "High School", rating: 9}
-    ]
-}
+//     if(typeof input === 'i' || input === 'I'){
+//         return input.replace('1');
+//     }
+//     if(typeof input === 's' || input === 'S'){
+//         return input.replace('$')
+//     }
+// }
 
-
-function goodNeighborhood(neighborhood){
-    let totalSchoolRating = 0;
-
-    for (let i = 0; i < neighborhood.schools.length; i += 1) {
-        totalSchoolRating += neighborhood.schools[i].rating;
-    }
-    return neighborhood.medianHomePrice < 300000 && neighborhood.crimeRate === 'low' && totalSchoolRating >= 24;
-}
-
-console.log(goodNeighborhood(neighborhood1)) // returns false due to school rating
-console.log(goodNeighborhood(neighborhood2)) // returns false due to crime rate
-console.log(goodNeighborhood(neighborhood3)) // returns true
-console.log(goodNeighborhood(neighborhood4)) // returns false due to median home price
+// ‘a’ or ‘A’ becomes ‘@’
+// ‘i’ or ‘I’ becomes ‘1’
+// ‘s’ or ‘S’ becomes ‘$’
+//
+console.log(encodeStr("apple")) // returns ‘@pple’
+console.log(encodeStr("codeup")) // returns ‘codeup’
+console.log(encodeStr("SASS")) // returns ‘$@$$’
+console.log(encodeStr("bike")) // returns ‘b1ke’
