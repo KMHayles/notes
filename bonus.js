@@ -449,21 +449,17 @@ const neighborhood4 = {
     ]
 }
 
-let homePrice = medianHomePrice.value
-let crime = crimeRate.value
-let totalRating = schools.values()
-let schoolRating = totalRating.value
 
-function goodNeighborhood(){
+function goodNeighborhood(neighborhood){
+    let totalSchoolRating = 0;
 
-    if(homePrice > 30000 && crime === "low" && schoolRating > 24){
-        return true;
-        console.log(goodNeighborhood());
+    for (let i = 0; i < neighborhood.schools.length; i += 1) {
+        totalSchoolRating += neighborhood.schools[i].rating;
     }
-
+    return neighborhood.medianHomePrice < 300000 && neighborhood.crimeRate === 'low' && totalSchoolRating >= 24;
 }
 
-goodNeighborhood(neighborhood1) // returns false due to school rating
-goodNeighborhood(neighborhood2) // returns false due to crime rate
-goodNeighborhood(neighborhood3) // returns true
-goodNeighborhood(neighborhood4) // returns false due to median home price
+console.log(goodNeighborhood(neighborhood1)) // returns false due to school rating
+console.log(goodNeighborhood(neighborhood2)) // returns false due to crime rate
+console.log(goodNeighborhood(neighborhood3)) // returns true
+console.log(goodNeighborhood(neighborhood4)) // returns false due to median home price

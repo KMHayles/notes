@@ -79,15 +79,15 @@
 
     // explicit iteration with .each()
 
-    // $('li').each(function(index, element) {
-    //     var currentText = $(element).text();
-    //     $(element).text(currentText + " " + index);
-    //     // if (index === 2) {
-    //     //     $(element).css('background', 'blue');
-    //     // }
-    // });
+    $('li').each(function(index, element) {
+        var currentText = $(element).text();
+        $(element).text(currentText + " " + index);
+        // if (index === 2) {
+        //     $(element).css('background', 'blue');
+        // }
+    });
 
-    // $('li').eq(2).css('background', 'blue');
+    $('li').eq(2).css('background', 'blue');
 
 
     // make the text purple for all list items that start with the letter b and create a monochromatic transition for the background color
