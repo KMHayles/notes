@@ -481,12 +481,12 @@
 //     }
 // }
 
-function encodeStr (input) {
-    return input
-        .replace(/a/g, "@")
-        .replace(/S/g, "$")
-        .replace(/i/g, "1");
-}
+// function encodeStr (input) {
+//     return input
+//         .replace(/a/g, "@")
+//         .replace(/S/g, "$")
+//         .replace(/i/g, "1");
+// }
 
 //replaceALL()
 
@@ -502,7 +502,98 @@ function encodeStr (input) {
 // ‘i’ or ‘I’ becomes ‘1’
 // ‘s’ or ‘S’ becomes ‘$’
 //
-console.log(encodeStr("apple")) // returns ‘@pple’
-console.log(encodeStr("codeup")) // returns ‘codeup’
-console.log(encodeStr("SASS")) // returns ‘$@$$’
-console.log(encodeStr("bike")) // returns ‘b1ke’
+// console.log(encodeStr("apple")) // returns ‘@pple’
+// console.log(encodeStr("codeup")) // returns ‘codeup’
+// console.log(encodeStr("SASS")) // returns ‘$@$$’
+// console.log(encodeStr("bike")) // returns ‘b1ke’
+
+
+// 01/24/23
+// Make a function, reverseStrings, that takes in an array of objects and reverses the value of the 'str' properties.
+
+
+
+
+    const strs = [
+    {
+        id: 1,
+        str: 'hello'
+    },
+    {
+        id: 2,
+        str: 'world'
+    },
+    {
+        id: 3,
+        str: 'codeup'
+    },
+    {
+        id: 4,
+        str: 'x'
+    }
+]
+
+//     function reverseStrings(strs){
+//         for(let i = 0; i < str.length; i += 1) {
+//             str[i].str = strs[i].str.split('').reverse().join('');
+//         }
+//         return strs;
+//     }
+//
+// reverseStrings(strs) // returns...
+
+// function reverseStrings(strs){
+//     strs.forEach(function(strObj){
+//         strs.obj.str = strObj.str.split('').reverse().join('');
+//     });
+//     return strs;
+// }
+// console.log(reverseStrings(strs));
+
+
+
+// findAverageDogAge(pets) // returns 7.5
+
+// users.forEach(function (user) {
+//   console.log(user.givenName);  //forEach are just for looping through arrays.
+// })
+
+//function method
+
+// const ages = [5, 10];
+//
+// function getAvg(ages) {
+//     const total = ages.reduce((acc, c) => acc + c, 0);
+//     return total / ages.length;
+// }
+//
+// const average = getAvg(ages);
+// console.log(average);
+    //
+    // [
+    // {
+    //     id: 1,
+    //     str: 'olleh'
+    // },
+    //     {
+    //         id: 2,
+    //         str: 'dlrow'
+    //     },
+    //     {
+    //         id: 3,
+    //         str: 'puedoc'
+    //     },
+    //     {
+    //         id: 4,
+    //         str: 'x'
+    //     }
+    // ]
+
+//01/26/23
+
+// map method
+
+let names = users.map(user) => {
+    return user.name;
+}
+
