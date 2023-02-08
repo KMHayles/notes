@@ -593,7 +593,16 @@
 
 // map method
 
-let names = users.map(user) => {
-    return user.name;
-}
+// let names = users.map(user) => {
+//     return user.name;
+// }
 
+
+function logFood (arr) {
+    for(let i = 0; i < arr.length; i++) {
+        console.log(`My fav food ${arr[i]}`)
+    }
+}
+let foodArray = ['pizza', 'cheese', 'frito pie', 'BBQ'];
+let newSortedArray = foodArray.sort()
+logFood(newSortedArray)
