@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Objects Intro</title>
+</head>
+<body>
+
+<h1>Intro to Objects</h1>
+
+<script>
+  "use strict";
+
+  /*
+  JS Objects
+
+  - like a named index array
+  - used to store related state and behavior
+  - where arrays are good for storing lists of data, objects store related aspects of a greater structure
+  - we have already used objects: String, Array, Math, Number
+  */
+
+  // const user = {
+  //   username:
+  //   password:
+  //   isAdmin:
+  // }
+  // objects allow you to group together states (values) and behavior (functions/actions)
+  // objects are similar to arrays, but they allow you to identify additional information "INSIDE" the object.
+
+
+  // ========== Creating Objects (dog, user, forecast, dictionaryEntry, movie, post, etc.)
+
+  // New Object Instance
+  // const dog = new Object(); //older syntax, most use {}
+  // console.log(typeof dog);
+
+
+  // Object Literal Notation
+
+  // const cat = {};
+  // console.log(typeof cat);
+
+  // const cat = {
+  //   name: 'Garfield',
+  //   age: 7
+  // };
+
+  // console.log(cat)
+  // console.log(cat.name);
+  // console.log(cat.age);
+  //
+  // cat.color = 'Orange';
+  // console.log(cat);
+
+  // cat.weight = prompt('How much does your cat weigh?');
+  // console.log(cat);
+
+  // cat.age = 8
+  // console.log(cat);
+
+  //console.log(cat['age']);
+
+
+  // ========== Accessing Properties on an Object
+
+  // console.log(pet.givenName);
+  // console.log(pet2.givenName);
+  // console.log(pet2['givenName']);
+  //
+  // pet.givenName = "Sabrina";
+
+  // console.log(pet.givenName);
+
+
+
+
+
+
+  // ========== Setting Properties on an Object
+
+  // const pet = {};
+
+  // pet.givenName = 'Sparkles';
+  // pet.age = 12;
+  // pet.species = 'turtle';
+  // pet.hasOffspring = true;
+  // pet['value-in-dollars'] = 400; // alternative syntax for assigning properties
+
+  // ========== Peeking into an Object (can result in inaccurate property values if your script mutates an array/object)
+
+  // console.log(pet);
+
+
+
+
+  // !! MINI-EXERCISE 1 !!
+  // -- Mini Exercise 1
+  // Create a few beverage objects and assign values to each object for the following properties:
+  //         - brandName
+  //         - type
+  //         - volumeInLiters
+  //         - priceInCents
+  //         - expirationDate
+  //         - datesOfPreviousSips (use an array of strings)
+  // - isOpen
+  // Define your objects using both literal syntax to create all properties and values at once and also try defining empty objects and assign property values in separate statements using the dot notation.
+
+//   const beer = {
+//     brandName: 'Second Pitch',
+//     type: 'Hefeweizen',
+//     volumeInLiters: .70,
+//     priceInCents: .50,
+//     expirationDate: 'Dec 12, 2022',
+//     datesOfPreviousSips: (["Dec 4, 2022"])
+//     isEmpty: yes
+//   }
+// console.log(beer);
+//
+// beer.brandName = 'Omega'
+//
+// console.log(beer);
+
+  // const drink1 = {
+  //   brandName: "Pepsi",
+  //   type: "Vanilla",
+  //   volumeInLiters: 0.01,
+  //   expirationDate: 29+"th",
+  //   dateOfPreviousSips: [1, 5, 7, 8, 10,'6th'],
+  //   isOpen: "yes"
+  // }
+  // console.log(drink1);
+  // console.log(drink1.isOpen);
+
+
+
+  // Nested Values
+
+  // const pet = {
+  //     name: 'Bowser',
+  //     age: 6,
+  //     species: 'Pug',
+  //     hasOffspring: false,
+  //     valueInDollars: 'priceless',
+  //     altNames: [
+  //         'Bowser Boy',
+  //         'Bowser Man',
+  //         'Bowser Buddy',
+  //         'Puggle Wuggle Boy'
+  //     ],
+  //     vitals: {
+  //         averageTempDegF: 101,
+  //         averageRestingHeartRate: 80,
+  //         isHungry: true
+  //     }
+  // };
+  //
+  // console.log(pet.name);
+  // console.log(pet.valueInDollars);
+  // console.log(pet.vitals.averageTempDegF)
+  // console.log(pet.altNames[1]);
+  // console.log(pet.vitals['isHungry']);
+
+
+  // const pet = {
+  //   name: 'Bowser',
+  //   age: 6,
+  //   species: 'Pug',
+  //   hasOffspring: false,
+  //   valueInDollars: 'priceless',
+  //   altNames: [
+  //     'Bowser Boy',
+  //     'Bowser Man',
+  //     'Bowser Buddy',
+  //     'Puggle Wuggle Boy'
+  //   ],
+  //   vitals: [
+  //     {
+  //     averageTempDegF: 101,
+  //     averageRestingHeartRate: 80,
+  //     isHungry: true
+  //   },
+  //     {
+  //       averageTempDegF: 99,
+  //       averageRestingHeartRate: 80,
+  //       isHungry: true
+  //     }
+  //   ]
+  // };
+  //
+  // console.log(pet.vitals[1].averageTempDegF)
+
+  // log and change various property values on the pet object
+
+
+
+
+  // ========== Working with Arrays of Objects
+
+  // const pets = [
+  //     {
+  //         givenName: 'Spot',  //index 0
+  //         isDog: true,
+  //         toys: ['rope', 'ball', 'bone']
+  //     },
+  //     {
+  //         givenName: 'Max',  //index 1 ...etc.
+  //         isDog: false,
+  //         toys: ['scratch post', 'catnip', 'laser']
+  //     },
+  //     {
+  //         givenName: 'Goldy',
+  //         isDog: false,
+  //         toys: ['algae', 'bubbles']
+  //     }
+  // ];
+
+  // for (let i = 0; i < pets.length; i += 1) {
+  //   pets[i].givenName = 'Smith';
+  // }
+
+  // pets.forEach(function(pet) {
+  //   pet.givenName = 'Bob';
+  // });
+  //
+  // console.log(pets);
+
+
+  // console.log(pets[0].givenName);
+  // console.log(pets[1].givenName);
+  // console.log(pets[2].givenName);  // hard way
+
+  // for (let i = 0; i < pets.length; i+= 1){
+  //   console.log(pets[i].givenName);
+  // }
+  //
+  // pets.forEach(function (pet) {
+  //   console.log(pet.givenName);  //forEach are just for looping through arrays.
+  // })
+
+  // pets.forEach(function (pet) {
+  //   pet.toys.forEach(function (toy) {
+  //     console.log(toy);
+  //   })
+  // });
+
+  // change every pet's name to 'Bowser' (manually, forEach, for loops)
+
+
+
+  // ========== Additional Example Working with Arrays of Objects
+
+  // create a pet object that has the following properties...
+  // givenName
+  // ageInYears
+  // species
+
+  // const pet1 = {
+  //     givenName: 'Freckles',
+  //     ageInYears: 4,
+  //     species: 'Dog'
+  // };
+  //
+  // const pet2 = {
+  //     givenName: 'Spot',
+  //     ageInYears: 2,
+  //     species: 'Fish'
+  // };
+  //
+  // const pet3 = {
+  //     givenName: 'Dog',
+  //     ageInYears: 10,
+  //     species: 'Cat'
+  // }
+  // const pets = [pet1, pet2, pet3];
+
+
+
+  // !! MINI EXERCISE 2 !!
+
+  // const users = [
+  //     {
+  //         givenName: 'Sam',
+  //         age: 21
+  //     },
+  //     {
+  //         givenName: 'Cathy',
+  //         age: 34
+  //     },
+  //     {
+  //         givenName: 'Karen',
+  //         age: 43
+  //     }
+  // ];
+
+  // 0. Log each given name
+
+  // users.forEach(function (user) {
+  //   console.log(user.givenName);  //forEach are just for looping through arrays.
+  // })
+
+  // //both ways
+  // for (let i = 0; i < user.length; i += 1){
+  //   console.log(user[i].givenName);
+  // }
+
+
+  // 1. Log the names of all users in a single console log separated by spaces. // output = "Sam Cathy Karen"
+
+
+  //Andre Murray example
+
+  // let newArray = [];
+  // for (let i = 0 ; i < users.length; i++) {
+  //   newArray.push(users[i].givenName)
+  //   // let newString = newArray.join(" ")
+  //   //    console.log(newString)
+  // }
+  // let newString = newArray.join(" ")
+  // console.log(newString)
+
+//class example
+  // let names = '';
+  // users.forEach(function (user) {
+  //   names += user.givenName + ' ';  //forEach are just for looping through arrays.
+  // })
+  // console.log(names.trim(), 'Sam Cathy Karen');
+
+
+
+  // 2. Change the names of all users to "John Doe"
+  // users.forEach(function(user) {
+  //   user.givenName = 'John Doe';
+  // });
+  //
+  // console.log(users);
+
+
+  // 3. Increase the current age of all users by 1
+
+  // for (let i = 0; i < users.length; i++){
+  //   console.log(users[i].age+1);
+  // }
+  //
+  // users.forEach(function(user) {
+  //   user.age += 1; // this means user.age + 1
+  //
+  // console.log(users);
+  //
+  // users.forEach(function(user){
+  // users.age++;
+  // });
+  //
+  // console.log(users);
+
+  // Can you accomplish each step using iteration?
+
+
+  // Extras...
+  // log the total of all the ages
+
+    // let totalAges = 0
+    // users.forEach(function(user) {
+    //   totalAges += user.age;
+    // });
+    //
+    // console.log(totalAges)
+
+
+  // log the average age of all users
+
+  // let totalAges = 0
+  // users.forEach(function(user) {
+  //   totalAges += user.age;
+  // });
+  //
+  // console.log(totalAges / users.length)
+
+
+  // log all the user information in the following format...
+
+  // users.forEach(function(user) {
+//   console.log(`user: ${user.givenName} | age: ${user.age}`)
+//   });
+
+
+
+
+  /*
+      user: Sam | age: 21
+      user: Cathy | age: 34
+      user: Karen | age: 43
+   */
+
+  // log the name of the longest given name of a user
+
+  //create the longest name variable, loop through users and reassign the name of the current if longer than longest name;
+
+  // let longestName = '';
+  // users.forEach(function(user){
+  //   if(user.givenName.length > longestName.length) {
+  //     longestName = user.givenName;
+  //   }
+  // });
+  // console.log(longestName);
+
+
+
+
+  // ========== Getting a List of Object Keys as an Array
+
+  // const pet1 = {
+  //     givenName: 'Freckles',
+  //     ageInYears: 4,
+  //     species: 'Dog'
+  // };
+
+  // console.log(Object.keys(pet1));
+
+
+  // ========== Assigning Functionality to an Object
+
+  const dog1 = {
+      petName: 'Sparky',
+      age: 4,
+      bark: function() {
+          console.log("Woof woof!");
+      },
+      eat: function(food) {
+          console.log('Dog is eating...' + food);
+      },
+      agePet: function() {
+          this.age += 1;
+      }
+  }
+  //"this" calls to anything inside a method on an object, it will refer to the
+
+  console.log(dog1)
+  dog1.bark();
+  dog1.eat('chocolate'); //methods are functions attached to objects;
+  dog1.agePet()
+
+
+
+
+  //
+  // const dog2 = {
+  //     petName: 'Rex',
+  //     age: 2,
+  //     bark: function() {
+  //         console.log("Woof woof!");
+  //     },
+  //     eat: function(food) {
+  //         console.log('Dog is eating...' + food);
+  //     },
+  //     agePet: function() {
+  //         this.age += 1;
+  //     }
+  // }
+  //
+  // const dog3 = {
+  //     petName: 'Dino',
+  //     age: 10,
+  //     bark: function() {
+  //         console.log("Woof woof!");
+  //     },
+  //     eat: function(food) {
+  //         console.log('Dog is eating...' + food);
+  //     },
+  //     agePet: function() {
+  //         this.age += 1;
+  //     }
+  // }
+  //
+  // const dogs = [dog1, dog2, dog3];
+  //
+  // console.log(dogs[0].age);
+  // console.log(dogs[1].age);
+  // console.log(dogs[2].age);
+  //
+  // dogs.forEach(function(dog) {
+  //     dog.agePet();
+  // });
+  //
+  // console.log(dogs[0].age);
+  // console.log(dogs[1].age);
+  // console.log(dogs[2].age);
+
+
+  // console.log(dog.age);
+  // dog.agePet();
+  // console.log(dog.age);
+
+  // dog.bark();
+  // dog.eat('steak');
+  // dog.eat('a bone');
+  // dog.eat();
+  //
+  // dog.sayHello = function() {
+  //     console.log('Wagging tail and barking lightly.');
+  // }
+  //
+  // dog.sayHello();
+
+
+
+
+  // const user = {
+  //     givenName: 'Justin',
+  //     age: 25,
+  //     sayHello: function(input) {
+  //         console.log(input);
+  //     },
+  //     logAge: function() {
+  //         console.log(this.age);
+  //     },
+  //     getYounger: function() {
+  //         this.age = this.age - 1;
+  //     },
+  //     setAge: function(age) {
+  //         this.age = age;
+  //     }
+  //     // addProp: function(name, value) {
+  //     //     this.name = value;
+  //     // }
+  // }
+
+  // console.log(user);
+
+  // user.sayHello('Hello, Go!');
+  // user.logAge();
+  // user.getYounger();
+  // user.logAge();
+  // user.setAge(100);
+  // user.logAge();
+  // user.getYounger();
+  // user.logAge();
+
+
+  // console.log(user);
+
+
+
+
+  // ========== The this Keyword
+
+  // const pet6 = {
+  //     name: "Sparky",
+  //     age: 3,
+  //     getOlder: function() {
+  //         console.log(this.age);
+  //         this.age += 1;
+  //     }
+  // };
+  //
+  // console.log(pet6.age);
+  // pet6.getOlder();
+  // console.log(pet6.age);
+
+
+  // ================================= OBJECTS READING QUESTIONS
+  // - What is a JS object?
+  //     "object" is a grouping of data and functionality. Data items contained in an object are referred to as "properties," and functions on an object are referred to as "Methods."
+
+  //     - What is the practical difference between these two statements?
+  //     someObject.someProperty = 4;
+  //     someObject[‘someProperty’] = 4;
+  //nothing, both statements assign properties to the objects with either dot or {}.
+
+
+  // - Are JS objects mutable?
+  //Yes both Object and Arrays are mutable
+
+  //     - Given the following code, what will be logged and why?
+  // var objA = {a: 1, b: 2};
+  // var objB = objA;
+  // objA.a = 7;
+  // console.log(objB.a);
+  // - Is it possible to nest another object inside of an object?
+  //     - Is it possible to nest an array in an object?
+  //     - What does ‘this’ refer to within an object method in JS?
+
+</script>
+</body>
+</html>

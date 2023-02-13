@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Arrays</title>
+</head>
+<body>
+
+<h1>Introduction to Arrays</h1>
+
+<script>
+
+    "use strict";
+
+    // ============================= Arrays Definition
+
+    /*
+        In JS, an array is a special object data type that may contain
+        a collection of multiple data types at numeric indices.
+
+        In other words, an array allows us to store and access multiple values (elements)
+        through one variable name (array name) and a specific index number.
+
+            Array of animals...
+             _______  _______  _______  _______
+            |       ||       ||       ||       |
+            |  DOG  ||  CAT  ||  EGG  ||  EMU  |
+            |       ||       ||       ||       |
+             -------  -------  -------  -------
+             Index 0  Index 1  Index 2  Index 3
+
+        Arrays may contain no defined elements, one, or many.
+
+        Arrays in JS may contain elements of mixed types.
+
+        Several array methods and properties are built in to JS to work with arrays.
+    */
+
+    // ============================= Declaring/Initializing an Array with Array Literal Syntax
+
+    // empty arrays may be declared...
+
+
+    // let pies = [];
+    // console.log(pies);
+
+    // let pies = ["apple", "cherry", "key lime", "huckleberry"];
+    // console.log(pies);
+
+    // declaring and initializing a large array
+
+    // let students = [
+    //     "Justin",
+    //     "Javier",
+    //     "Laura",
+    //     "Isaac",
+    //     "Trevor",
+    //     "Dane",
+    //     "Ryan",
+    //     "Vivian"
+    // ];
+
+    // let lastStudent = students.length - 1;
+    // console.log(students[1]);
+    // console.log(students[lastStudent]);
+    // console.log(students.length);
+    // console.log(students[8]); // will be undefined because vivian is the last index.
+    // students[0] = 'Overlord';
+    // console.log(students)
+
+    // 3
+
+    // console.log(students[students.length - 1]);
+    //
+    //
+    //
+    // console.log(students[100]);
+
+
+
+    // !! What index is student 1 at? 0
+
+    // Student 7?
+    //  Student 8?
+
+
+    // separate declaration and initialization
+
+    // let pies = [];
+    // pies[0] = "apple";
+    // pies[1] = "cherry";
+    // pies[10]= 'vanilla';
+    //
+    // console.log(pies);
+
+    // declaring and initializing a high index number
+
+    // pies[10] = "huckleberry";
+    // console.log(pies);
+    //
+    // console.log(pies[0]);
+    //
+    // pies[0] = 'vanilla';
+    //
+    // console.log(pies);
+
+
+
+    // ============================= Counting Array Items
+
+    // let pies = ["apple", "cherry", "key lime", "huckleberry"];
+    // let numberOfPies = pies.length;
+    // console.log(numberOfPies);
+
+
+    // ============================= Accessing Array Elements
+
+    // console.log(pies[100]);
+    // console.log(pies[3]);
+
+    // ============================= !! MINI-EXERCISE 1 !!
+
+    // 1. Create an array of three of your classmates.
+    //     let students = [
+    //     "Luke",
+    //     "Will",
+    //     "Robert",
+    //     ];
+    //
+    //     //2. Practice console logging each classmate separately.
+    //     console.log(students[0]);
+    //     console.log(students[1]);
+    //     console.log(students[2]);
+    //
+    //     //3. Reassign the second element to be the string "Justin".
+    //     students[1] = "Justin";
+    //     console.log(students);
+
+
+    // ============================= For Loop
+
+    /* SYNTAX
+
+        for (let i = 0; i < someArray.length; i += 1) {
+            console.log(someArray[i]);
+        }
+
+        - in the above context "someArray[i]" will access the next array element in each iteration
+
+        - PROS: variety of traversals
+        - CONS: more complicated syntax
+        -  USE: when you need to iterate partially or backwards through an array
+
+     */
+
+    // example
+
+    //my practice
+
+    // let pies = ["apple", "cherry", "key lime", "huckleberry"];
+    //
+    // // for (let i = 0; i < pies.length; i += 1) {  //< will always end on the .length of an array
+    // //     console.log(i);
+    // //     console.log(pies[i]);
+    // // }
+    // //
+    // for (let i = pies.length - 1; i >= 0; i -= 1) { //pies.length - 1, the -1 removes the "undefined" when in reverse order.
+    //     console.log(pies[i]);
+    // }
+
+
+
+
+    // console.log(pies);
+    //
+    // for (let i = 0; i < pies.length; i += 1) {
+    //     console.log("I like " + pies[i]);
+    // }
+
+    // backwards
+    // let pies = ["apple", "cherry", "key lime", "huckleberry"];
+    // for (let i = pies.length - 1; i >= 0; i -= 1) {
+    //     console.log("I like " + pies[i]);
+    // }
+    //
+    // console.log(pies);
+
+    // !! How could we print out every other pie from the beginning of the array to the end? !!
+
+
+    // ============================= ForEach Loop
+
+    /* SYNTAX
+      //the forEach is a function that takes in an argument that does not take in a boolean or string, they take in functions.
+        someArray.forEach(function(element, index, array){
+            console.log(element);
+            console.log(index);
+        });
+
+        - PROS: simpler syntax, easier to read
+        - CONS: can only increment through entire array
+        -  USE: when you need to iterate through entire array
+
+        REMINDERS...
+        - the parameters are optional to pass in to the anonymous function
+        - parameters may be semantically named but order matters
+
+
+        WORKS KINDA LIKE THIS:
+
+        let theArray = [some elements...];
+        function forEach(callback) {
+            for (let i = 0; i < elements.length; i += 1) {
+                callback(element[i], i, theArray);
+            }
+        }
+
+     */
+//notes***************
+    // const numbers = ['ken', 'Bob', 3, 4, 5, 6];
+    //ken = element
+    //ken = '0' index
+    //[all] = array
+
+    // function logEvenOddMessage(number) {
+    //     let isEven = (number % 2 === 0) ? 'even' : 'odd';
+    //     console.log(isEven);
+    // }
+    //
+    // numbers.forEach(logEvenOddMessage);
+    //
+    // numbers.forEach(function(number) {
+    //     let isEven = (number % 2 === 0) ? 'even' : 'odd';
+    //     console.log(isEven);
+    // });
+
+    // numbers.forEach(function(element, index, array){
+    //    console.log(element, index, array);
+    // })
+
+    //example for a forEach************
+    // const numbers = [3, 2, 4];
+    // let total = 0;
+    // numbers.forEach(function(number){
+    //     total += number;
+    // });
+    // console.log(total);
+
+
+    // standard syntax
+    //     let pies = ["apple", "cherry", "key lime", "huckleberry"];
+
+    // for (let i = 0; i < pies.length; i += 1) {
+    //     console.log(pies[i]);
+    // }
+
+    // pies.forEach(function(element, index, array){
+    //     console.log(element);
+    //     console.log(index);
+    //     console.log(array);
+    //     console.log('==================');
+    // });
+
+    // pies.forEach(function(pie){
+    //     console.log(pie);
+    // });
+
+    // pies.forEach(function(pie){
+    //     console.log(pie);
+    // });
+
+    // defining all three parameters
+    // pies.forEach(function(element, index, array){
+    //     console.log("Element " + element + " is at index " + index);
+    //     console.log(pies);
+    //     console.log(array);
+    // });
+
+    // with different parameter names
+    // pies.forEach(function(pie, index, array){
+    //     console.log("Element " + pie + " is at index " + index);
+    //     console.log(pies);
+    //     console.log(array);
+    // });
+
+
+    // with only one parameter
+
+    // pies.forEach(function(element){
+    //     console.log("Element " + element);
+    // });
+    //
+    //
+    // console.log("----------------");
+
+
+    // callback function syntax
+
+    // let pies = ["apple", "cherry", "key lime", "huckleberry"];
+
+    // function logElements(element) {
+    //     console.log("Element " + element);
+    // }
+
+    // pies.forEach(logElements);
+    //
+    // function alertElements(element) {
+    //     alert(element);
+    // }
+    //
+    // pies.forEach(alertElements);
+
+
+    // ============================= !! MINI-EXERCISE 2 !!
+
+    // 1. Loop through your classmates array with a for loop to log each classmate.
+    //const classmates = ["Ken", "Bob", "Jeff", "Sam", "Chris"];
+
+    // for (let i = 0; i < classmates.length; i += 1) {
+    //     console.log(classmates[i]);
+    // }
+
+    // 2. Loop through your classmates array with a forEach loop.
+    // classmates.forEach(function(element, index, array){
+    //    console.log(element);
+    //     console.log(index);
+    //     console.log(array);
+    // });
+
+    // numbers.forEach(function(element, index, array){
+    //    console.log(element, index, array);
+    // })
+
+    // ============================= ARRAYS AND FUNCTIONS EXAMPLES
+
+    // !! Write a function, logNums, that takes in an array and logs each number in the array !!
+    // const thisArr = [1, 2, 3, 4, 5];
+    //
+    // function logNums(input) {
+    //     thisArr.forEach(function (input) {
+    //         console.log(input);
+    //     });
+    // }
+    // logNums(thisArr);
+    //titus example
+
+    // !! Write a function, returnLongString, that takes in an array of strings and returns all strings concatenated together !!
+    // const longStr = ['hat', 'house', 'cabin', 'bats'];
+    //
+    // function returnLongString(input) {
+    //     return input.join('');
+    // }
+    // console.log(returnLongString(longStr));
+
+    //titus example
+
+    // !! Write a function, returnArrSum, that takes in an array of values and returns the sum of all number elements !!
+
+    // const array = [1, 2, 3, 4, 10];
+    // function returnArrSum(arr) {
+    //     let sum = 0
+    //     for(let i = 0; i < arr.length; i += 1) {
+    //         sum += arr[i];
+    //     }
+    //     return sum;
+    // }
+    // console.log(returnArrSum(array));
+    //titus example
+
+    // 1) Find a partner
+    // 2) Take 15 minutes to work together to find a solution to the following logic puzzle(s)...
+    // TWO STICKS AND A LIGHTER
+
+    // You are confined in a room with only two sticks and a lighter. You know that each stick will take exactly 1 hour to burn up but the rate at which each stick burns is unpredictable. How can you measure exactly 45 minutes.
+    //     If you find the solution, work on the second logic puzzle.
+
+    // two stick
+    //
+    // burn the 1 hr candle at both ends taking 30 mins for the first candle, at the same burn the second candle on one end, as the second candle burns you allow candle 1 to burn all the way down (totally 30 mins of burn).
+
+
+    //     THE DOUBLE JEOPARDY DOORS
+    // You are trapped in a room with two doors. One leads to certain doom and the other leads to freedom. You don’t know which is which. There are two robots guarding the doors. They will let you choose one door but upon doing so you must go through it. You can, however, ask one robot one question. The problem is one robot always tells the truth ,the other always lies and you don’t know which is which.
+    //     What is the question you ask?
+    //     HINT: Each robot knows everything about the other robot.
+    //
+
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>
