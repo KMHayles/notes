@@ -1,4 +1,4 @@
-public class RecursionLecture {
+//public class RecursionLecture {
 
     // Recursion is when a function can call itself.
 
@@ -155,9 +155,7 @@ public class RecursionLecture {
 
     // If no base case is reached, the computer will run out of memory and the program will crash with a Stack Overflow Error.
 
-    /**
-     * RECURSION MINI-EXERCISES
-     */
+    /*RECURSION MINI-EXERCISES*/
 
     // TODO: use recursion to print out a given number up through 100
 
@@ -172,4 +170,4 @@ public class RecursionLecture {
 
 
 
-}
+//}
