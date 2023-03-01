@@ -1,24 +1,24 @@
 public class ExceptionsTest {
     public static void main(String[] args) {
 
-//    String Str = new String("I love Java");
-//    int length = Str.length();
-//        System.out.println(Str.length());
-//        System.out.print("The extracted substring is : ");
-//        System.out.println(Str.substring(10));
-//
-//        try {
-//            ExceptionsLecture es = new ExceptionsLecture();
-////          String testString = "This is a test String";
-//            System.out.println(es.testString.length());
-//            String newSubString = es.testString.substring(8);
-//
-//        } catch (IndexOutOfBoundsException iobx){
-//            System.out.println("this is out of bounds");
-////            iobx.printStackTrace();
-//        } finally { //Can use "finally" as a log to put info on
-//            System.out.println("Thank you for using this code");
-//        }
+    String Str = new String("I love Java");
+    int length = Str.length();
+        System.out.println(Str.length());
+        System.out.print("The extracted substring is : ");
+        System.out.println(Str.substring(10));
+
+        try {
+            ExceptionsLecture es = new ExceptionsLecture();
+//          String testString = "This is a test String";
+            System.out.println(es.testString.length());
+            String newSubString = es.testString.substring(8);
+
+        } catch (IndexOutOfBoundsException iobx){
+            System.out.println("this is out of bounds");
+//            iobx.printStackTrace();
+        } finally { //Can use "finally" as a log to put info on
+            System.out.println("Thank you for using this code");
+        }
 
         ExceptionsLecture es = new ExceptionsLecture();
         es.askForAnInteger();
