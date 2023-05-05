@@ -465,7 +465,7 @@
 // console.log(goodNeighborhood(neighborhood4)) // returns false due to median home price
 
 
-01/19/23
+01/19/2023
 // Create a function, encodeStr, that takes in a string and returns the string of characters with the following substitutions:
 //
 // function encodeStr (input) {
